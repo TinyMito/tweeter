@@ -17,3 +17,7 @@ nav>div {
   align-items: center;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+nav #icon {
+  color: red;
+}
