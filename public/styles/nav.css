@@ -8,6 +8,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   font-family: 'Bungee', cursive;
+  position: fixed;
 }
 
 nav>div {

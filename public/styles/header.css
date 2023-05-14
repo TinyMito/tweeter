@@ -1,0 +1,11 @@
+header {
+  display: flex;
+  height: 520px;
+  width: 100%;
+  padding: 50px;
+  background-color: #e39000;
+  background-image: url("https://www.transparenttextures.com/patterns/cloth-alike.png");  color: white;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
