@@ -1,5 +1,7 @@
 $(document).ready(function() {
   $('#tweet-text').on('input', function() {
-    console.log('TYPE!')
+    let msg = $(this).val();
+    let count = msg.length;
+    console.log(count);
   });
 });
