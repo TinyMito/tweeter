@@ -65,12 +65,12 @@ button:active {
   justify-content: space-between;
  }
 
- article div.user {
+ article.tweet.header div.user {
   display: flex;
   align-items: center;
  }
 
- article span.fa-solid {
+ article.tweet.header i {
   font-size: 50px;
   padding: 10px;
  }
@@ -88,8 +88,20 @@ button:active {
  }
 
  article.tweet.footer {
+  display: flex;
+  justify-content: space-between;
   padding: 20px 20px 0px 20px;
   border-top: 5px solid #777;
   font-size: 0.75em;
   font-weight: bold;
+ }
+
+ article.tweet.footer i {
+  padding: 0px 5px;
+  color: #4056A1;
+ }
+
+ article.tweet.footer i:hover {
+  padding: 0px 5px;
+  color: #a87030;
  }
