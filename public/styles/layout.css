@@ -49,3 +49,26 @@ button:active {
   margin: 0 auto;
   width: 90%;
  }
+
+ section.tweets {
+  padding: 20px;
+  border: 5px solid #777;
+  margin: 50px 0px;
+ }
+
+ article.tweet.header {
+  display: flex;
+  justify-content: space-between;
+ }
+
+ article.tweet.body {
+  padding: 20px;
+  font-weight: bold;
+ }
+
+ article.tweet.footer {
+  padding: 20px 20px 0px 20px;
+  border-top: 5px solid #777;
+  font-size: 0.75em;
+  font-weight: bold;
+ }
