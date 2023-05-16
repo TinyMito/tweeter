@@ -4,9 +4,9 @@ $(document).ready(function() {
     let count = 140 - msg.length;
     $('.counter').text(count);
     if (count < 0) {
-      $('.counter').css('color', 'red');
+      $('.counter').addClass('max');
     } else {
-      $('.counter').css('color', 'black');
+      $('.counter').removeClass('max');
     }
   });
 });
