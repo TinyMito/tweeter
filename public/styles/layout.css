@@ -50,13 +50,13 @@ button:active {
   width: 90%;
  }
 
- section#tweets-container {
+ article.tweet {
   padding: 20px;
   border: 5px solid #777;
   margin: 50px 0px;
  }
 
- section#tweets-container:hover {
+ article.tweet:hover {
   box-shadow: 5px 5px 0px #8da0dd;
  }
 
@@ -70,7 +70,7 @@ button:active {
   align-items: center;
  }
 
- article.tweet .header i {
+ article.tweet .header img {
   font-size: 50px;
   padding: 10px;
  }
