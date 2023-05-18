@@ -18,7 +18,7 @@ $(document).ready(function() {
       "content": {
         "text": "If I have seen further it is by standing on the shoulders of giants"
       },
-      "created_at": 1461116232227
+      "created_at": 1683453959088
     },
     {
       "user": {
@@ -28,17 +28,19 @@ $(document).ready(function() {
       "content": {
         "text": "Je pense , donc je suis"
       },
-      "created_at": 1461113959088
+      "created_at": 1683113959088
     }
   ];
 
   const renderTweets = (data) => {
     // loops through tweets
     for (let tweet of data) {
+      
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(tweet);
+
       // takes return value and appends it to the tweets container
-      $('#tweets-container').append($tweet); 
+      $('#tweets-container').append($tweet);
     }
   };
 
@@ -69,15 +71,15 @@ $(document).ready(function() {
     return tweetHTML;
   };
 
-  // Timestamp to Days Converstion
   const timestamp = (time) => {
+    // Timestamp to Days Converstion
     const timestamp = time;
     const today = new Date();
     const postDay = new Date(timestamp);
-  
+    
     // Time differences
     const timeDiff = today.getTime() - postDay.getTime();
-  
+
     // Convert to days
     return Math.floor(timeDiff / (1000 * 60 * 60 * 24));
   };
