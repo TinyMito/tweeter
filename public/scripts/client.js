@@ -86,4 +86,10 @@ $(document).ready(function() {
 
   renderTweets(data);
 
+  $("#new-tweet-form").on("submit", function(event) {
+    event.preventDefault();
+    $.post("/tweets", $("#tweet-text").serialize());
+    console.log("Test")
+  });
+  
 });
