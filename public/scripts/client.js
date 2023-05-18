@@ -17,9 +17,6 @@ $(document).ready(function() {
   };
 
   const createTweetElement = (data) => {
-    // Call timestamp to covert to days
-    const created = timestamp(data.created_at);
-
     // HTML ouput for tweet
     const tweetHTML = $(`
     <article class="tweet">
@@ -43,22 +40,14 @@ $(document).ready(function() {
     return tweetHTML;
   };
 
-  const timestamp = (time) => {
-    // Timestamp to Days Converstion
-    const timestamp = time;
-    const today = new Date();
-    const postDay = new Date(timestamp);
-    
-    // Time differences
-    const timeDiff = today.getTime() - postDay.getTime();
-
-    // Convert to days
-    return Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-  };
-
   const loadTweets = () => {
-    $.get("/tweets", function(data) {
-      renderTweets(data);
+    return new Promise((resolve, reject) => {
+      $.get("/tweets", function(data) {
+        resolve(data);
+      })
+      .fail(function(error) {
+        reject(error);
+      });
     });
   };
 
@@ -68,6 +57,12 @@ $(document).ready(function() {
     console.log("Test")
   });
 
-  loadTweets();
+  loadTweets()
+    .then((data) => {
+      renderTweets(data);
+    })
+    .catch((error) => {
+      console.error('Unable to fetch JSON:', error);
+    });
 
 });
