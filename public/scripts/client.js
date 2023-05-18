@@ -56,8 +56,18 @@ $(document).ready(function() {
   // POST Tweet Data
   $("#new-tweet-form").on("submit", function(event) {
     event.preventDefault();
-    $.post("/tweets", $("#tweet-text").serialize());
-    console.log("Test")
+    const url = '/tweets';
+    const id = '#tweet-text';
+
+    if ($(id).val().trim() === '') {
+      alert('Please enter a tweet.');
+      return;
+    } else if ($(id).val().trim().length > 139) {
+      alert('Tweet has to be less than 140 characters.');
+      return;
+    }
+
+    $.post(url, $(id).serialize());
   });
 
   // Call all tweets from JSON
