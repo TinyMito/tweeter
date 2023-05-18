@@ -6,6 +6,7 @@
 
 $(document).ready(function() {
 
+  // Iterate JSON tweets
   const renderTweets = (data) => {
     // loops through tweets
     for (let tweet of data) {
@@ -16,8 +17,8 @@ $(document).ready(function() {
     }
   };
 
+  // HTML ouput for tweet
   const createTweetElement = (data) => {
-    // HTML ouput for tweet
     const tweetHTML = $(`
     <article class="tweet">
       <div class="header">
@@ -40,6 +41,7 @@ $(document).ready(function() {
     return tweetHTML;
   };
 
+  // GET JSON Tweet Data
   const loadTweets = () => {
     return new Promise((resolve, reject) => {
       $.get("/tweets", function(data) {
@@ -51,12 +53,14 @@ $(document).ready(function() {
     });
   };
 
+  // POST Tweet Data
   $("#new-tweet-form").on("submit", function(event) {
     event.preventDefault();
     $.post("/tweets", $("#tweet-text").serialize());
     console.log("Test")
   });
 
+  // Call all tweets from JSON
   loadTweets()
     .then((data) => {
       renderTweets(data);
