@@ -16,6 +16,12 @@ $(document).ready(function() {
   const charLimitTweet = 'Tweet has to be less than 140 characters.';
   const errorTweet = 'Unable to fetch JSON:';
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   // Iterate JSON tweets
   const renderTweets = (data) => {
     $(tweetBox).empty();
@@ -34,13 +40,13 @@ $(document).ready(function() {
     <article class="tweet">
       <div class="header">
         <div class="user">
-          <img src="${data.user.avatars}"></img>
-          <span>${data.user.name}</span>
+          <img src="${escape(data.user.avatars)}"></img>
+          <span>${escape(data.user.name)}</span>
         </div>
-        <span class="tag">${data.user.handle}</span>
+        <span class="tag">${escape(data.user.handle)}</span>
       </div>
       <div class="body">
-        <span>${data.content.text}</span>
+        <span>${escape(data.content.text)}</span>
       </div>
       <div class="footer">
         <span>${timeago.format(data.created_at)}</span>
