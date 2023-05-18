@@ -6,46 +6,14 @@
 
 $(document).ready(function() {
 
-  // TEST DATA ONLY
-/*   const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1683453959088
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1683113959088
-    }
-  ];
-
   const renderTweets = (data) => {
     // loops through tweets
     for (let tweet of data) {
-      
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(tweet);
-
       // takes return value and appends it to the tweets container
       $('#tweets-container').append($tweet);
     }
-  }; */
-
-  const loadTweets = () => {
-
   };
 
   const createTweetElement = (data) => {
@@ -66,7 +34,7 @@ $(document).ready(function() {
         <span>${data.content.text}</span>
       </div>
       <div class="footer">
-        <span>${created} days ago</span>
+        <span>${timeago.format(data.created_at)}</span>
         <span><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-heart"></i></span>
       </div>
     </article>
@@ -88,7 +56,11 @@ $(document).ready(function() {
     return Math.floor(timeDiff / (1000 * 60 * 60 * 24));
   };
 
-  //renderTweets(data);
+  const loadTweets = () => {
+    $.get("/tweets", function(data) {
+      renderTweets(data);
+    });
+  };
 
   $("#new-tweet-form").on("submit", function(event) {
     event.preventDefault();
@@ -96,5 +68,6 @@ $(document).ready(function() {
     console.log("Test")
   });
 
-  
+  loadTweets();
+
 });
