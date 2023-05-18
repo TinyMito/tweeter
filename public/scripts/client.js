@@ -7,7 +7,7 @@
 $(document).ready(function() {
 
   // TEST DATA ONLY
-  const data = [
+/*   const data = [
     {
       "user": {
         "name": "Newton",
@@ -42,6 +42,10 @@ $(document).ready(function() {
       // takes return value and appends it to the tweets container
       $('#tweets-container').append($tweet);
     }
+  }; */
+
+  const loadTweets = () => {
+
   };
 
   const createTweetElement = (data) => {
@@ -84,12 +88,13 @@ $(document).ready(function() {
     return Math.floor(timeDiff / (1000 * 60 * 60 * 24));
   };
 
-  renderTweets(data);
+  //renderTweets(data);
 
   $("#new-tweet-form").on("submit", function(event) {
     event.preventDefault();
     $.post("/tweets", $("#tweet-text").serialize());
     console.log("Test")
   });
+
   
 });
