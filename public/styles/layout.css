@@ -60,12 +60,12 @@ margin: 0px 0px 25px 0px;
 background-color: rgb(255, 206, 206);
 color: red;
 font-weight: bold;
-font-size: 0.8em;
+font-size: 1em;
 }
 
 .warning-msg i {
 padding: 10px;
-font-size: 2em;
+font-size: 1.5em;
 }
 
 article.tweet {
