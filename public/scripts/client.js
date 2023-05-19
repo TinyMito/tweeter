@@ -22,16 +22,16 @@ const loadTweets = () => {
     $.get(jsonUrl, function(data) {
       resolve(data);
     })
-    .fail(function(error) {
-      reject(error);
-    });
+      .fail(function(error) {
+        reject(error);
+      });
   });
 };
 
 const renderWarning = (msg) => {
   $(warnBox).empty();
   $(warnBox).append(createWarningElement(msg));
-}
+};
 
 // Iterate JSON tweets
 const renderTweets = (data) => {
@@ -46,18 +46,18 @@ const renderTweets = (data) => {
   }
 };
 
-// Prevent XSS
-function escape (str) {
+// Prevent XSS, function escape() overwrite built-in since it is deprecated
+function escape(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-};
+}
 
 // HTML output for warning
 const createWarningElement = (msg) => {
   const warningHTML = `<div class="warning-msg"><i class="fa-solid fa-circle-exclamation"></i>${msg}</div>`;
   return warningHTML;
-}
+};
 
 // HTML ouput for tweet
 const createTweetElement = (data) => {
@@ -94,7 +94,7 @@ $(document).ready(function() {
     } else if ($(tweetTextArea).val().trim().length > 139) {
       renderWarning(charLimitTweet);
       return;
-    };
+    }
 
     // POST the tweet data to JSON
     $.post(jsonUrl, { text: escape($(tweetTextArea).val())})
@@ -103,16 +103,16 @@ $(document).ready(function() {
         $.get(jsonUrl, function(data) {
           renderTweets(data);
           $(tweetTextArea).val('');
-        })
-      })
+        });
+      });
   });
   
   // DOCUMENT LOAD call tweets from JSON
   loadTweets()
-  .then((data) => {
-    renderTweets(data);
-  })
-  .catch((error) => {
-    console.log(errorTweet, error);
-  });
+    .then((data) => {
+      renderTweets(data);
+    })
+    .catch((error) => {
+      console.log(errorTweet, error);
+    });
 });
