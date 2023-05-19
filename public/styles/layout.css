@@ -50,6 +50,24 @@ button:active {
   width: 90%;
  }
 
+ .warning-msg {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 5px solid rgb(255, 160, 160);
+  border-radius: 10px;
+  margin: 0px 0px 25px 0px;
+  background-color: rgb(255, 206, 206);
+  color: red;
+  font-weight: bold;
+  font-size: 0.8em;
+ }
+
+ .warning-msg i {
+  padding: 10px;
+  font-size: 2em;
+ }
+
  article.tweet {
   padding: 20px;
   border: 5px solid #777;

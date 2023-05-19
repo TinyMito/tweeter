@@ -49,6 +49,9 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <!-- Tweet Error -->
+      <section id="warning"></section>
+
       <section class="new-tweet">
         <form action="/tweets" method="POST" id="new-tweet-form">
           <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
@@ -58,7 +61,7 @@
           </div>
         </form>
       </section>
-      
+
       <!-- Tweet listing here -->
       <section id="tweets-container"></section>
     </main>
