@@ -44,82 +44,82 @@ button:active {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- main {
-  padding: 50px 0;
-  margin: 0 auto;
-  width: 90%;
- }
+main {
+padding: 50px 0;
+margin: 0 auto;
+width: 90%;
+}
 
- .warning-msg {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border: 5px solid rgb(255, 160, 160);
-  border-radius: 10px;
-  margin: 0px 0px 25px 0px;
-  background-color: rgb(255, 206, 206);
-  color: red;
-  font-weight: bold;
-  font-size: 0.8em;
- }
+.warning-msg {
+display: flex;
+align-items: center;
+padding: 10px;
+border: 5px solid rgb(255, 160, 160);
+border-radius: 10px;
+margin: 0px 0px 25px 0px;
+background-color: rgb(255, 206, 206);
+color: red;
+font-weight: bold;
+font-size: 0.8em;
+}
 
- .warning-msg i {
-  padding: 10px;
-  font-size: 2em;
- }
+.warning-msg i {
+padding: 10px;
+font-size: 2em;
+}
 
- article.tweet {
-  padding: 20px;
-  border: 5px solid #777;
-  margin: 50px 0px;
- }
+article.tweet {
+padding: 20px;
+border: 5px solid #777;
+margin: 50px 0px;
+}
 
- article.tweet:hover {
-  box-shadow: 5px 5px 0px #8da0dd;
- }
+article.tweet:hover {
+box-shadow: 5px 5px 0px #8da0dd;
+}
 
- article.tweet .header {
-  display: flex;
-  justify-content: space-between;
- }
+article.tweet .header {
+display: flex;
+justify-content: space-between;
+}
 
- article.tweet .header div.user {
-  display: flex;
-  align-items: center;
- }
+article.tweet .header div.user {
+display: flex;
+align-items: center;
+}
 
- article.tweet .header img {
-  font-size: 50px;
-  padding: 10px;
- }
+article.tweet .header img {
+font-size: 50px;
+padding: 10px;
+}
 
- article span.tag {
-  color: #8da0dd;
-  font-weight: bold;
-  font-size: 1.5em;
-  padding: 10px;
- }
+article span.tag {
+color: #8da0dd;
+font-weight: bold;
+font-size: 1.5em;
+padding: 10px;
+}
 
- article.tweet .body {
-  padding: 20px;
-  font-weight: bold;
- }
+article.tweet .body {
+padding: 20px;
+font-weight: bold;
+}
 
- article.tweet .footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 20px 0px 20px;
-  border-top: 5px solid #777;
-  font-size: 0.75em;
-  font-weight: bold;
- }
+article.tweet .footer {
+display: flex;
+justify-content: space-between;
+padding: 20px 20px 0px 20px;
+border-top: 5px solid #777;
+font-size: 0.75em;
+font-weight: bold;
+}
 
- article.tweet .footer i {
-  padding: 0px 5px;
-  color: #4056A1;
- }
+article.tweet .footer i {
+padding: 0px 5px;
+color: #4056A1;
+}
 
- article.tweet .footer i:hover {
-  padding: 0px 5px;
-  color: #a87030;
- }
+article.tweet .footer i:hover {
+padding: 0px 5px;
+color: #a87030;
+}

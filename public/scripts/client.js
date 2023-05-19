@@ -29,8 +29,9 @@ const loadTweets = () => {
 };
 
 const renderWarning = (msg) => {
-  $(warnBox).empty();
-  $(warnBox).append(createWarningElement(msg));
+  $(warnBox).slideUp(250, function() {
+      $(warnBox).html(createWarningElement(msg)).hide().slideDown(500);
+    });
 };
 
 // Iterate JSON tweets
