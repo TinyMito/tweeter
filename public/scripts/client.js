@@ -92,7 +92,8 @@ $(document).ready(function() {
     if ($(tweetTextArea).val().trim() === '') {
       renderWarning(emptyTweet);
       return;
-    } else if ($(tweetTextArea).val().trim().length > 139) {
+    } 
+    if ($(tweetTextArea).val().trim().length > 139) {
       renderWarning(charLimitTweet);
       return;
     }
