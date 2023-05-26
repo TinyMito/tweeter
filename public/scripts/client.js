@@ -10,10 +10,6 @@ const jsonUrl = '/tweets';
 const tweetBox = '#tweets-container';
 const tweetForm = '#new-tweet-form';
 const tweetTextArea = '#tweet-text';
-const warnBox = '#warning';
-// Error messages
-const emptyTweet = 'Please enter a tweet message.';
-const charLimitTweet = 'Tweet has to be less than 140 characters.';
 const errorTweet = 'Unable to fetch JSON:';
 
 // GET JSON Tweet Data
@@ -28,12 +24,6 @@ const loadTweets = () => {
   });
 };
 
-const renderWarning = (msg) => {
-  $(warnBox).slideUp(250, function() {
-      $(warnBox).html(createWarningElement(msg)).hide().slideDown(500);
-    });
-};
-
 // Iterate JSON tweets
 const renderTweets = (data) => {
   $(warnBox).empty();
@@ -45,19 +35,6 @@ const renderTweets = (data) => {
     // takes return value and appends it to the tweets container, prepend reverse newest at top.
     $(tweetBox).prepend($tweet);
   }
-};
-
-// Prevent XSS, function escape() overwrite built-in since it is deprecated
-function escape(str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}
-
-// HTML output for warning
-const createWarningElement = (msg) => {
-  const warningHTML = `<div class="warning-msg"><i class="fa-solid fa-circle-exclamation"></i>${msg}</div>`;
-  return warningHTML;
 };
 
 // HTML ouput for tweet
@@ -92,7 +69,7 @@ $(document).ready(function() {
     if ($(tweetTextArea).val().trim() === '') {
       renderWarning(emptyTweet);
       return;
-    } 
+    }
     if ($(tweetTextArea).val().trim().length > 139) {
       renderWarning(charLimitTweet);
       return;
