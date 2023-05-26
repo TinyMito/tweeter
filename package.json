@@ -1,6 +1,6 @@
 {
   "name": "tweeter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A twitter clone by Lighthouse Labs for web bootcamp students to learn front-end dev skillz",
   "main": "server/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "node server/index.js",
     "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
   },
-  "author": "Lighthouse Labs",
+  "author": "Lighthouse Labs - modified by Kevin Ip",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
