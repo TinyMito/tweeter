@@ -23,4 +23,18 @@ Modified by Kevin, website is design responsive between mobile device, to tablet
 - MD5 2.1.0 or above
 
 ## Screenshots
-!["Mobile Version"|200](docs/tweet-mobile.png)
+
+### Mobile Version
+<img src="docs/tweet-mobile.png" width="300px">
+
+### Tablet Version
+<img src="docs/tweet-tablet.png" width="300px">
+
+### Desktop Version
+<img src="docs/tweet-desktop.png" width="300px">
+
+### Blank input warning
+<img src="docs/tweet-blank-warning.png" width="300px">
+
+### Max character input warning
+<img src="docs/tweet-limit-warning.png" width="300px">
