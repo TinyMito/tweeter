@@ -144,8 +144,14 @@ article.tweet .footer i:hover {
     font-size: 18px;
   }
   #nav-col {
+    position: absolute;
     flex-direction: column;
     justify-content: space-evenly;
+    background: none;
+    font-size: 1.2em;
+  }
+  #header-col {
+    height: 500px;
   }
   article span.tag {
     font-size: 0.9em;
